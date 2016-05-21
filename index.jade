@@ -1,0 +1,7 @@
+//output:index.html
+include carousel-mixin
+doctype html
+link(href="index.css" rel="stylesheet")
+- var carouselcont = ["http://www.spacebuckets.com/gal/1-1.jpg","http://www.spacebuckets.com/gal/2-1.jpg","http://www.spacebuckets.com/gal/3-1.jpg","http://www.spacebuckets.com/gal/4-1.jpg","image","image","image","image","image","image"]
+//- http://www.spacebuckets.com/gal/1-1.jpg
++carousel(10, carouselcont)

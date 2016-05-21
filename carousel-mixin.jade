@@ -1,0 +1,21 @@
+mixin carousel(amti, imgs)
+ - var amt = amti - 1
+ ul.carousel-container
+  each url, index in imgs
+   li
+    if index == 0
+     input.carousel-toggle(type='radio' name='toggle', checked=true, id='tab-'+index)
+    else
+     input.carousel-toggle(type='radio' name='toggle', checked=false, id='tab-'+index)
+    label.dot(for='tab-'+index)
+    ul.carousel-content
+     li
+      img(src=url)
+      if index == 0
+       label.arrow.back(for='tab-'+amt)
+      else
+       label.arrow.back(for='tab-'+(index - 1))
+      if amt == index
+       label.arrow.next(for='tab-'+ 0)
+      else
+       label.arrow.next(for='tab-'+(index + 1))
