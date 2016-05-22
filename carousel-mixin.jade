@@ -2,10 +2,15 @@ mixin carouselFullScreen
  svg(viewBox="0 0 24 24" width=24 height=24 fill="currentColor")
   path(d="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z").exitFS
   path(d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z").intoFS
-mixin carousel(amti, imgs)
+
+mixin carousel(amti, imgs, carouselname)
  - var carouselPrefix = "carousel-" //- The opening ID of carousel. Set to "" for just itself.
  - var amt = amti - 1 //- Reduce the amount measured by one
  
+ if carouselname
+  - var name = carouselPrefix+carouselname
+ else
+  - var name = carouselPrefix+"toggle"
  input(id=carouselPrefix+"fullscreen", type="checkbox" hidden=true).carouselFullScreen
  //- The fullscreen /\ and the container \/
  ul.carousel-container
@@ -14,10 +19,10 @@ mixin carousel(amti, imgs)
    li
     if index == 0
      //- If it's the first in line check it by default
-     input.carousel-toggle(type='radio' name='toggle', checked=true, id=carouselPrefix+'tab-'+index, hidden)
+     input.carousel-toggle(type='radio' name=name, checked=true, id=carouselPrefix+'tab-'+index, hidden)
     else
      //- or else
-     input.carousel-toggle(type='radio' name='toggle', checked=false, id=carouselPrefix+'tab-'+index, hidden)
+     input.carousel-toggle(type='radio' name=name, checked=false, id=carouselPrefix+'tab-'+index, hidden)
     label.dot(for=carouselPrefix+'tab-'+index)
     //- A dot for this particular carousel item
     ul.carousel-content
