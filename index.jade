@@ -8,7 +8,7 @@ mixin lipsum(amt)
 doctype html
 html/
 head
- title Carousel Test
+ title Carousel and Mixin (CSS+HTML output)
  meta(name="viewport" content="width=device-width")
  link(rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" title="Normalise.css")
  //- link(rel="stylesheet" href="index.css")
@@ -19,14 +19,17 @@ body
  - var x = "x"
  - var png = ".png"
  - var carouselcont = [tafttest+800+x+600+png, tafttest+600+x+800+png, tafttest+800+x+800+png, tafttest+600+x+600+png, tafttest+500+x+800+png, tafttest+800+x+500+png, tafttest+500+x+500+png, tafttest+300+x+800+png, tafttest+800+x+300+png, tafttest+720+x+720+png]
- h1(align="center") Carousel in pure CSS
+ h1(align="center") Carousel without JavaScript
+ h2(align="center") A Jade mixin, with Stylus CSS pre&shy;processing.
  +carousel(10, carouselcont)
- p(align="center")
-  a(href="https://github.com/DizzyZane/carousel-css") github.com&shy;/&shy;DizzyZane&shy;/&shy;carousel&shy;-&shy;css
-  br
-  |Images via 
-  a(href="https://tafttest.com") Taft&shy;Test.com
-  |, the 
-  em Web Dev Placeholder Image Generator
-  |.
- +lipsum(1)
+ div(align="center")
+  p Repo: 
+   a(href="https://github.com/DizzyZane/carousel-css") github.com&shy;/&shy;DizzyZane&shy;/&shy;carousel&shy;-&shy;css
+  p Images via 
+   a(href="https://tafttest.com") Taft&shy;Test.com
+   |, the 
+   em Web Dev Placeholder Image Generator
+   |.
+  p Please remember to only use this in the correct points; a friendly reminder from 
+   a(href="http://shouldiuseacarousel.com/") should&shy;i&shy;use&shy;a&shy;carousel&shy;.&shy;com
+  +lipsum(1)
