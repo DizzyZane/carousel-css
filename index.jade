@@ -10,9 +10,11 @@ html/
 head
  title Carousel and Mixin (CSS+HTML output)
  meta(name="viewport" content="width=device-width")
- link(rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" title="Normalise.css")
+ //- link(rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" title="Normalise.css")
  //- link(rel="stylesheet" href="index.css")
- link(rel="stylesheet" href="carousel.min.css")
+ //- link(rel="stylesheet" href="carousel.min.css")
+ style
+  include normalise+carousel.min.css
  base(target="_blank")
 body
  - var tafttest = "https://tafttest.com/"
