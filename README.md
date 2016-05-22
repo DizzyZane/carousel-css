@@ -4,6 +4,8 @@ Carousel made using Jade and Stylus.
 
 Free use.
 
+Pre-made version can be found in `carousel.min.css`, it assumes 550&times;500px size.
+
 ---
 
 Inspired by <https://www.reddit.com/r/web_design/comments/4k8x5d/image_carousel_css_only_no_js_required/>
