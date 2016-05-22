@@ -7,7 +7,7 @@
     max-width: 100%;
     width: 550px;
     height: 500px;
-    border-radius: 5px;
+    border-radius: 4px;
     position: relative;
   }
   .carousel-container .arrow {
@@ -25,7 +25,7 @@
     z-index: 9999;
     padding-bottom: 4px;
     padding-top: 2px;
-    border-radius: 2px;
+    border-radius: 4px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -58,7 +58,7 @@
     background: #000;
     position: absolute;
     top: 0px;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 5px 5px -5px #333;
     list-style-type: none;
     padding: 0;
@@ -70,7 +70,7 @@
     padding: 0;
     width: auto;
     height: auto;
-    border-radius: 2px;
+    border-radius: 4px;
     transition: 0.2s ease-in;
     max-height: 500px;
     max-width: 550px;
@@ -84,7 +84,7 @@
     height: 12px;
     background: rgba(255,255,255,0.5);
     position: relative;
-    margin-top: 454.5454545454545px;
+    margin-top: 475px;
     border-radius: 50%;
     z-index: 999;
     margin-right: 8px;
@@ -114,7 +114,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 0 2px 2px 0;
+    margin: 0 4px 4px 0;
     width: 27px;
     height: 27px;
     z-index: 99999;

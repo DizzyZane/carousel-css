@@ -4,8 +4,8 @@ $carouselWidth = 550px;
 $carouselHeight = 500px;
 $carouselSpinnerWidth = 50px;
 $carouselSpinnerFontSize = 62px;
-$carouselRadius = 2px;
-$carouselDotTopMargin = ($carouselHeight/11)*10;
+$carouselRadius = 4px;
+$carouselDotTopMargin = ($carouselHeight/10)*9.5;
 $carouselMargin = 30px;
 
 $carouselFullScreenSize = 27px;
@@ -21,7 +21,7 @@ $carouselFullScreenSizeFS = $carouselFullScreenSize*2;
   max-width 100%
   width $carouselWidth
   height $carouselHeight
-  border-radius 5px
+  border-radius $carouselRadius
   position relative
   .arrow
    // Directional arrows
@@ -67,7 +67,7 @@ $carouselFullScreenSizeFS = $carouselFullScreenSize*2;
    background #000
    position absolute
    top 0px
-   border-radius 5px
+   border-radius $carouselRadius
    box-shadow 0 5px 5px -5px #333
    list-style-type none
    padding 0
