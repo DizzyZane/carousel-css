@@ -1,7 +1,24 @@
 //output:index.html
 include carousel-mixin
+mixin lipsum(amt)
+ while amt>0
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  - (amt--)
+
 doctype html
-link(href="index.css" rel="stylesheet")
-- var carouselcont = ["http://www.spacebuckets.com/gal/1-1.jpg","http://www.spacebuckets.com/gal/2-1.jpg","http://www.spacebuckets.com/gal/3-1.jpg","http://www.spacebuckets.com/gal/4-1.jpg","image","image","image","image","image","image"]
-//- http://www.spacebuckets.com/gal/1-1.jpg
-+carousel(10, carouselcont)
+html/
+head
+ title Carousel Test
+ meta(name="viewport" content="width=device-width")
+ link(rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" title="Normalise.css")
+ //- link(rel="stylesheet" href="index.css")
+ link(rel="stylesheet" href="carousel.min.css")
+body
+ - var tafttest = "http://tafttest.com/"
+ - var x = "x"
+ - var png = ".png"
+ - var carouselcont = [tafttest+800+x+600+png, tafttest+600+x+800+png, tafttest+800+x+800+png, tafttest+600+x+600+png, tafttest+500+x+800+png, tafttest+800+x+500+png, tafttest+500+x+500+png, tafttest+300+x+800+png, tafttest+800+x+300+png, tafttest+720+x+720]
+ h1(align="center") Carousel in pure CSS
+ +carousel(10, carouselcont)
+ p(align="center")
+  a(href="https://github.com/DizzyZane/carousel-css") github.com&shy;/&shy;DizzyZane&shy;/&shy;carousel&shy;-&shy;css

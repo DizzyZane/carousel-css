@@ -1,104 +1,121 @@
 <!DOCTYPE html>
-<link href="index.css" rel="stylesheet">
-<ul class="carousel-container">
-  <li>
-    <input type="radio" name="toggle" checked="checked" id="tab-0" class="carousel-toggle"/>
-    <label for="tab-0" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="http://www.spacebuckets.com/gal/1-1.jpg"/>
-        <label for="tab-9" class="arrow back"></label>
-        <label for="tab-1" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-1" class="carousel-toggle"/>
-    <label for="tab-1" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="http://www.spacebuckets.com/gal/2-1.jpg"/>
-        <label for="tab-0" class="arrow back"></label>
-        <label for="tab-2" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-2" class="carousel-toggle"/>
-    <label for="tab-2" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="http://www.spacebuckets.com/gal/3-1.jpg"/>
-        <label for="tab-1" class="arrow back"></label>
-        <label for="tab-3" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-3" class="carousel-toggle"/>
-    <label for="tab-3" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="http://www.spacebuckets.com/gal/4-1.jpg"/>
-        <label for="tab-2" class="arrow back"></label>
-        <label for="tab-4" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-4" class="carousel-toggle"/>
-    <label for="tab-4" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-3" class="arrow back"></label>
-        <label for="tab-5" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-5" class="carousel-toggle"/>
-    <label for="tab-5" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-4" class="arrow back"></label>
-        <label for="tab-6" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-6" class="carousel-toggle"/>
-    <label for="tab-6" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-5" class="arrow back"></label>
-        <label for="tab-7" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-7" class="carousel-toggle"/>
-    <label for="tab-7" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-6" class="arrow back"></label>
-        <label for="tab-8" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-8" class="carousel-toggle"/>
-    <label for="tab-8" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-7" class="arrow back"></label>
-        <label for="tab-9" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <input type="radio" name="toggle" id="tab-9" class="carousel-toggle"/>
-    <label for="tab-9" class="dot"></label>
-    <ul class="carousel-content">
-      <li><img src="image"/>
-        <label for="tab-8" class="arrow back"></label>
-        <label for="tab-0" class="arrow next"></label>
-      </li>
-    </ul>
-  </li>
-</ul>
+<html>
+<head>
+  <title>Carousel Test</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" title="Normalise.css">
+  <link rel="stylesheet" href="carousel.min.css">
+</head>
+<body>
+  <h1 align="center">Carousel in pure CSS</h1>
+  <input id="carousel-fullscreen" type="checkbox" hidden="hidden" class="carouselFullScreen"/>
+  <ul class="carousel-container">
+    <li>
+      <input type="radio" name="toggle" checked="checked" id="carousel-tab-0" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-0" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/800x600.png"/>
+          <label for="carousel-tab-9" class="arrow back"></label>
+          <label for="carousel-tab-1" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-1" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-1" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/600x800.png"/>
+          <label for="carousel-tab-0" class="arrow back"></label>
+          <label for="carousel-tab-2" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-2" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-2" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/800x800.png"/>
+          <label for="carousel-tab-1" class="arrow back"></label>
+          <label for="carousel-tab-3" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-3" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-3" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/600x600.png"/>
+          <label for="carousel-tab-2" class="arrow back"></label>
+          <label for="carousel-tab-4" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-4" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-4" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/500x800.png"/>
+          <label for="carousel-tab-3" class="arrow back"></label>
+          <label for="carousel-tab-5" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-5" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-5" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/800x500.png"/>
+          <label for="carousel-tab-4" class="arrow back"></label>
+          <label for="carousel-tab-6" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-6" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-6" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/500x500.png"/>
+          <label for="carousel-tab-5" class="arrow back"></label>
+          <label for="carousel-tab-7" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-7" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-7" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/300x800.png"/>
+          <label for="carousel-tab-6" class="arrow back"></label>
+          <label for="carousel-tab-8" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-8" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-8" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/800x300.png"/>
+          <label for="carousel-tab-7" class="arrow back"></label>
+          <label for="carousel-tab-9" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="radio" name="toggle" id="carousel-tab-9" hidden="hidden" class="carousel-toggle"/>
+      <label for="carousel-tab-9" class="dot"></label>
+      <ul class="carousel-content">
+        <li><img src="http://tafttest.com/720x720"/>
+          <label for="carousel-tab-8" class="arrow back"></label>
+          <label for="carousel-tab-0" class="arrow next"></label>
+        </li>
+      </ul>
+    </li>
+    <label for="carousel-fullscreen" class="carousel-fullscreen">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z" class="exitFS"></path>
+        <path d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" class="intoFS"></path>
+      </svg>
+    </label>
+  </ul>
+  <p align="center"><a href="https://github.com/DizzyZane/carousel-css">github.com&shy;/&shy;DizzyZane&shy;/&shy;carousel&shy;-&shy;css</a></p>
+</body>
