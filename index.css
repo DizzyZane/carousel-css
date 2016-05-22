@@ -72,8 +72,8 @@
     height: auto;
     border-radius: 2px;
     transition: 0.2s ease-in;
-    max-height: 100vh;
-    max-width: 100vw;
+    max-height: 500px;
+    max-width: 550px;
     vertical-align: middle;
   }
   .carousel-container .dot {
