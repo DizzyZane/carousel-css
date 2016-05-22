@@ -6,9 +6,13 @@ Free use.
 
 Pre-made version can be found in `carousel.min.css`, it assumes 550&times;500px size.
 
----
+If you want to load both `normalise.css` and `carousel.min.css` use `normalise+carousel.min.css`. This is using version `4.1.1` of normalise.css, and so almost certainly not be up-to-date. You can get the latest version of normalise.css from <https://necolas.github.io/normalize.css/> and import it.
 
 Inspired by <https://www.reddit.com/r/web_design/comments/4k8x5d/image_carousel_css_only_no_js_required/>
+
+Technical details below.
+
+---
 
 # Example code:
 
