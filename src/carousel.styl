@@ -1,0 +1,116 @@
+$carouselWidth = 550px
+$carouselHeight = 338px
+$carouselSpinnerWidth = 50px
+$carouselSpinnerFontSize = 62px
+$carouselRadius = 2px
+$carouselTopMargin = 56%
+$carouselZIndex = 10
+
+.c-carousel
+  
+  // Carousel Item List
+  &__items
+    height $carouselHeight
+    list-style-type none
+    margin 30px auto
+    max-width 100%
+    padding 0
+    position relative
+    width $carouselWidth
+
+  // Carousel Items
+  &__item
+  
+    &:nth-child(1)
+      
+      .c-carousel__pagination-button
+        margin-left $carouselSpinnerWidth
+
+    &__content
+      background #000
+      height 0
+      list-style-type none
+      overflow hidden
+      padding 0
+      position absolute
+      top 0px
+
+    &__image
+      height 100%
+      left 50%
+      max-width 100%
+      opacity 0
+      padding 0
+      position absolute
+      top 0
+      transform translateX(-50%)
+      transition 0.2s all ease-in
+      width auto
+
+  // Back and Forward Arrows
+  &__navigation
+    background rgba(0,0,0,0.5)
+    color rgba(255,255,255,0.5)
+    cursor pointer
+    display block
+    font-size $carouselSpinnerFontSize
+    position absolute
+    text-align center
+    top 50%
+    transform translateY(-50%)
+    user-select none
+    width $carouselSpinnerWidth
+    z-index $carouselZIndex
+
+    &--back
+      background linear-gradient(to right, rgba(0,0,0,0.5), transparent)
+      left 0px
+
+      &::before
+        content "\2039"
+
+    &--forward
+      background linear-gradient(to left, rgba(0,0,0,0.5), transparent)
+      right 0px
+
+      &::before
+        content "\203a"
+
+    &:active
+    &:focus
+    &:hover
+      color rgba(255,255,255,1)
+
+  // Pagination checkboxes
+  &__pagination-checkbox
+    display none
+
+    &:checked + .c-carousel__pagination-button
+      background #fff
+
+    &:checked ~ .c-carousel__item__content
+      height 100%
+      width 100%
+
+      .c-carousel__item__image
+        opacity 1
+
+  // Pagination Dots
+  &__pagination-button
+    background rgba(255,255,255,0.5)
+    border-radius 50%
+    cursor pointer
+    display block
+    float left
+    height 12px
+    margin-right 8px
+    margin-top $carouselTopMargin
+    opacity 1
+    position relative
+    width 12px
+    z-index $carouselZIndex
+
+    &:active
+    &:focus
+    &:hover
+      background #fff

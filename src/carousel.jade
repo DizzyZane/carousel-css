@@ -1,0 +1,52 @@
+mixin carousel(carouselItems, carouselName)
+
+  if !carouselName
+    - var carouselName = "myCarousel"
+
+  .c-carousel(id="#{carouselName}")
+
+    ul.c-carousel__items
+
+      //- For each item provided
+      each item, index in carouselItems
+
+        li.c-carousel__item
+
+          //- Pagination
+          if index == 0
+            //- If it's the first item then check it by default
+            input.c-carousel__pagination-checkbox(checked="checked", name="#{carouselName}", id="#{carouselName}-pagination-#{index}", type="radio")
+          else
+            input.c-carousel__pagination-checkbox(name="#{carouselName}", id="#{carouselName}-pagination-#{index}", type="radio")
+
+          label.c-carousel__pagination-button(for="#{carouselName}-pagination-#{index}")
+
+          //- -------
+
+          //- Content
+          ul.c-carousel__item__content
+
+            li
+              img.c-carousel__item__image(alt="#{item.altText}", src="#{item.url}")
+
+              if index == 0
+                //- If it's the first item then the back arrow should activate
+                //- the last item.
+                label.c-carousel__navigation.c-carousel__navigation--back(for="#{carouselName}-pagination-#{carouselItems.length - 1}")
+              else
+                label.c-carousel__navigation.c-carousel__navigation--back(for="#{carouselName}-pagination-#{index - 1}")
+
+              if index == carouselItems.length - 1
+                //- If it's the last item then the forward arrow should activate
+                //- the first item.
+                label.c-carousel__navigation.c-carousel__navigation--forward(for="#{carouselName}-pagination-0")
+              else
+                label.c-carousel__navigation.c-carousel__navigation--forward(for="#{carouselName}-pagination-#{index + 1}")
+
+    input.c-carousel__fullscreen-checkbox(id="#{carouselName}-fullscreen", type="checkbox")
+
+    //- Fullscreen toggle button
+    label.c-carousel__fullscreen-toggle(for="#{carouselName}-fullscreen")
+      svg(fill="currentColor", height="24", width="24", viewBox="0 0 24 24")
+      path(d="M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z")
+      path(d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z")

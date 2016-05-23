@@ -1,0 +1,52 @@
+//- Include the mixin
+include carousel
+
+//- Set up array of items for the carousel
+-
+  var carouselItems= [
+    {altText: "myImage", url: "https://tafttest.com/800x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/600x800.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x800.png"},
+    {altText: "myImage", url: "https://tafttest.com/600x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/500x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x500.png"},
+    {altText: "myImage", url: "https://tafttest.com/300x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x300.png"},
+    {altText: "myImage", url: "https://tafttest.com/720x720.png"}
+  ]
+
+doctype
+html
+
+  head
+    title No-JavaScript Image Carousel using a Jade mixin!
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(rel="stylesheet" href="carousel.css")
+
+    style.
+      body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight: 300;
+        text-align: center;
+      }
+
+  body
+
+  h1 No-JavaScript Image Carousel using a Jade mixin!
+
+  +carousel(carouselItems, "myCarousel")
+
+  footer
+
+    p Repo: 
+      a(href="https://github.com/DizzyZane/carousel-css") github.com&shy;/&shy;DizzyZane&shy;/&shy;carousel&shy;-&shy;css
+    p Images via 
+      a(href="https://tafttest.com") Taft&shy;Test.com
+      |, the 
+      em Web Dev Placeholder Image Generator
+      |.
+    p Please remember to only use carousel when absolutely necessary! Here's a friendly reminder from 
+      a(href="http://shouldiuseacarousel.com/") should&shy;i&shy;use&shy;a&shy;carousel&shy;.&shy;com

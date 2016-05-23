@@ -1,53 +1,53 @@
-# Carousel (No JS)
+# No JavaScript Carousel, using a Jade mixin
 
 Carousel made using Jade and Stylus.
 
 Free use.
 
-Pre-made version can be found in `carousel.min.css`, it assumes 550&times;500px size.
+## Installation
 
-If you want to load both `normalise.css` and `carousel.min.css` use `normalise+carousel.min.css`. This is using version `4.1.1` of normalise.css, and so almost certainly not be up-to-date. You can get the latest version of normalise.css from <https://necolas.github.io/normalize.css/> and import it.
+```
+npm install jade-carousel
+```
 
-Inspired by <https://www.reddit.com/r/web_design/comments/4k8x5d/image_carousel_css_only_no_js_required/>
+## Usage
 
-Technical details below.
+See the example in the `dist` folder.
 
----
+In your jade file simply call the mixin, passing in an array of image objects and an optional name (ID) for the carousel.
 
-# Example code:
+```
+-
+  var carouselItems= [
+    {altText: "myImage", url: "https://tafttest.com/800x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/600x800.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x800.png"},
+    {altText: "myImage", url: "https://tafttest.com/600x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/500x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x500.png"},
+    {altText: "myImage", url: "https://tafttest.com/300x600.png"},
+    {altText: "myImage", url: "https://tafttest.com/800x300.png"},
+    {altText: "myImage", url: "https://tafttest.com/720x720.png"}
+  ]
 
-`````jade
-include carousel-mixin
++carousel(carouselItems, "myCarousel")
++carousel(carouselItems)
+```
 
-- var tafttest = "https://tafttest.com/"
-- var x = "x"
-- var png = ".png"
-- var carouselcont = [tafttest+800+x+600+png, tafttest+600+x+800+png, tafttest+800+x+800+png, tafttest+600+x+600+png, tafttest+500+x+800+png, tafttest+800+x+500+png, tafttest+500+x+500+png, tafttest+300+x+800+png, tafttest+800+x+300+png, tafttest+720+x+720+png]
+The CSS is in the `dist` folder. You can modify it or use as is by `@import`ing it into your Stylus/Sass/Less files.
 
-+carousel(10, carouselcont)
-`````
 
-You need to know how many items there are in a carousel before you add it. If there's another way (amount in array) please tell me.
+## Development
 
-The CSS is easier, as it is Stylus based.
+1. Install dependencies:
 
-You can change it in the file by changing these variables:
+```
+npm install
+```
 
-`````stylus
-$carouselWidth = 550px;
-$carouselHeight = 500px;
-$carouselSpinnerWidth = 50px;
-$carouselSpinnerFontSize = 62px;
-$carouselRadius = 4px;
-$carouselDotTopMargin = ($carouselHeight/10)*9.5;
-$carouselMargin = 30px;
+2. Compile the source code:
 
-$carouselFullScreenSize = 27px;
-$carouselFullScreenSizeFS = $carouselFullScreenSize*2;
-`````
-
-They are moderately self-explanatory and are only needed to change a small amount. For the most part though changing is not required.
-
-It's just as fast as a JS-based version but without the mixture of compatibility. It is almost guaranteed to work and can change more often.
-
-View live demo: <https://dizzyzane.github.io/carousel-css/>
+```
+npm start
+```

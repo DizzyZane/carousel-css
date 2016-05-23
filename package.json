@@ -1,0 +1,29 @@
+{
+  "author": "Dizzy Zane",
+  "bugs": {
+    "url": "https://github.com/darryl-snow/carousel-css/issues"
+  },
+  "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "jade": "^1.11.0",
+    "stylus": "^0.54.5"
+  },
+  "description": "A carousel made using Jade and Stylus mixins that requires no JavaScript",
+  "keywords": [
+    "Jade",
+    "Stylus",
+    "Carousel",
+    "Slider"
+  ],
+  "license": "MIT",
+  "main": "./src/carousel.jade",
+  "name": "jade-carousel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darryl-snow/carousel-css.git"
+  },
+  "scripts": {
+    "start": "jade ./src/example.jade --out ./dist --pretty && stylus ./src/carousel.styl --out ./dist && autoprefixer-cli -o ./dist/carousel.css ./dist/carousel.css"
+  },
+  "version": "1.0.0"
+}
