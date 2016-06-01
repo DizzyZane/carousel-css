@@ -1,13 +1,23 @@
-# No JavaScript Carousel, using a Jade mixin
+# Jade Carousel
 
-Carousel made using Jade and Stylus.
-
-Free use.
+A basic image carousel that requires no JavaScript and is generated using a Jade mixin.
 
 ## Installation
 
 ```
 npm install jade-carousel
+```
+
+Inside your Jade template include the mixin:
+
+```
+include ../node_modules/jade-carousel/src/carousel
+```
+
+Inside your stylus file include the styles:
+
+```
+@import '../node_modules/jade-carousel/src/carousel'
 ```
 
 ## Usage

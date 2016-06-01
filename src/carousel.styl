@@ -5,29 +5,32 @@ $carouselSpinnerFontSize = 62px
 $carouselRadius = 2px
 $carouselTopMargin = 56%
 $carouselZIndex = 10
+$carouselBackground = #000000
+$carouselForeground = #ffffff
+$carouselMargin = 30px;
 
 .c-carousel
-  
-  // Carousel Item List
+
+  // Carousel item list
   &__items
     height $carouselHeight
     list-style-type none
-    margin 30px auto
+    margin $carouselMargin auto
     max-width 100%
     padding 0
     position relative
     width $carouselWidth
 
-  // Carousel Items
+  // Carousel items
   &__item
-  
+
     &:nth-child(1)
-      
+
       .c-carousel__pagination-button
         margin-left $carouselSpinnerWidth
 
     &__content
-      background #000
+      background $carouselBackground
       height 0
       list-style-type none
       overflow hidden
@@ -47,10 +50,10 @@ $carouselZIndex = 10
       transition 0.2s all ease-in
       width auto
 
-  // Back and Forward Arrows
+  // Back and forward arrows
   &__navigation
-    background rgba(0,0,0,0.5)
-    color rgba(255,255,255,0.5)
+    background rgba($carouselBackground, 0.5)
+    color rgba($carouselForeground, 0.5)
     cursor pointer
     display block
     font-size $carouselSpinnerFontSize
@@ -79,14 +82,14 @@ $carouselZIndex = 10
     &:active
     &:focus
     &:hover
-      color rgba(255,255,255,1)
+      color rgba($carouselForeground, 1)
 
   // Pagination checkboxes
   &__pagination-checkbox
     display none
 
     &:checked + .c-carousel__pagination-button
-      background #fff
+      background $carouselForeground
 
     &:checked ~ .c-carousel__item__content
       height 100%
@@ -95,9 +98,9 @@ $carouselZIndex = 10
       .c-carousel__item__image
         opacity 1
 
-  // Pagination Dots
+  // Pagination dots
   &__pagination-button
-    background rgba(255,255,255,0.5)
+    background rgba($carouselForeground, 0.5)
     border-radius 50%
     cursor pointer
     display block
@@ -113,4 +116,81 @@ $carouselZIndex = 10
     &:active
     &:focus
     &:hover
-      background #fff
+      background $carouselForeground
+
+  // Fullscreen checkbox
+  &__fullscreen-checkbox
+    display none
+
+    &:checked
+
+      & ~ .c-carousel__items
+        background $carouselBackground
+        height 100%
+        left 0
+        margin 0
+        position fixed
+        top 0
+        width 100%
+        z-index $carouselZIndex + 1
+
+        .c-carousel__pagination-button
+          z-index $carouselZIndex + 3
+
+  // Fullscreen toggle button
+  &__fullscreen-toggle
+    bottom 0
+    color $carouselForeground
+    font-size 2em
+    position absolute
+    right 0.25em
+    z-index $carouselZIndex + 2
+
+    &__label
+      cursor pointer
+      display block
+
+    &__icon
+      height 1em
+      width 1em
+
+  @media print, handheld
+
+    &__items
+      align-items flex-start
+      border 2px dotted lighten($carouselBackground, 50%)
+      display flex
+      flex-direction row
+      flex-wrap wrap
+      height auto
+      justify-content center
+      margin $carouselMargin
+      text-align center
+      width calc(100% - 60px)
+
+      &:before
+        content "Image Gallery"
+        font-size 2em
+        margin 1em auto
+        width 100%
+
+      img
+        opacity 1
+
+    &__item
+      margin 1em
+      width 25%
+
+      &__content
+        background none
+        height 100%
+        position relative
+        width 100%
+
+      &__image
+        height auto
+        position relative
+
+    &__pagination-button
+    &__navigation
+      display none
