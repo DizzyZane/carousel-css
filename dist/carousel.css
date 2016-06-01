@@ -1,0 +1,189 @@
+.c-carousel__items {
+  height: 338px;
+  list-style-type: none;
+  margin: 30px auto;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  width: 550px;
+}
+.c-carousel__item:nth-child(1) .c-carousel__pagination-button {
+  margin-left: 50px;
+}
+.c-carousel__item__content {
+  background: #000;
+  height: 0;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+}
+.c-carousel__item__image {
+  height: 100%;
+  left: 50%;
+  max-width: 100%;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+  width: auto;
+}
+.c-carousel__navigation {
+  background: rgba(0,0,0,0.5);
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: block;
+  font-size: 62px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 50px;
+  z-index: 10;
+}
+.c-carousel__navigation--back {
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.5), transparent);
+  background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+  left: 0px;
+}
+.c-carousel__navigation--back::before {
+  content: "\2039";
+}
+.c-carousel__navigation--forward {
+  background: -webkit-linear-gradient(right, rgba(0,0,0,0.5), transparent);
+  background: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+  right: 0px;
+}
+.c-carousel__navigation--forward::before {
+  content: "\203a";
+}
+.c-carousel__navigation:active,
+.c-carousel__navigation:focus,
+.c-carousel__navigation:hover {
+  color: #fff;
+}
+.c-carousel__pagination-checkbox {
+  display: none;
+}
+.c-carousel__pagination-checkbox:checked + .c-carousel__pagination-button {
+  background: #fff;
+}
+.c-carousel__pagination-checkbox:checked ~ .c-carousel__item__content {
+  height: 100%;
+  width: 100%;
+}
+.c-carousel__pagination-checkbox:checked ~ .c-carousel__item__content .c-carousel__item__image {
+  opacity: 1;
+}
+.c-carousel__pagination-button {
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 12px;
+  margin-right: 8px;
+  margin-top: 56%;
+  opacity: 1;
+  position: relative;
+  width: 12px;
+  z-index: 10;
+}
+.c-carousel__pagination-button:active,
+.c-carousel__pagination-button:focus,
+.c-carousel__pagination-button:hover {
+  background: #fff;
+}
+.c-carousel__fullscreen-checkbox {
+  display: none;
+}
+.c-carousel__fullscreen-checkbox:checked ~ .c-carousel__items {
+  background: #000;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+}
+.c-carousel__fullscreen-checkbox:checked ~ .c-carousel__items .c-carousel__pagination-button {
+  z-index: 13;
+}
+.c-carousel__fullscreen-toggle {
+  bottom: 0;
+  color: #fff;
+  font-size: 2em;
+  position: absolute;
+  right: 0.25em;
+  z-index: 12;
+}
+.c-carousel__fullscreen-toggle__label {
+  cursor: pointer;
+  display: block;
+}
+.c-carousel__fullscreen-toggle__icon {
+  height: 1em;
+  width: 1em;
+}
+@media print, handheld {
+  .c-carousel__items {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 2px dotted #808080;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 30px;
+    text-align: center;
+    width: calc(100% - 60px);
+  }
+  .c-carousel__items:before {
+    content: "Image Gallery";
+    font-size: 2em;
+    margin: 1em auto;
+    width: 100%;
+  }
+  .c-carousel__items img {
+    opacity: 1;
+  }
+  .c-carousel__item {
+    margin: 1em;
+    width: 25%;
+  }
+  .c-carousel__item__content {
+    background: none;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+  .c-carousel__item__image {
+    height: auto;
+    position: relative;
+  }
+  .c-carousel__pagination-button,
+  .c-carousel__navigation {
+    display: none;
+  }
+}
